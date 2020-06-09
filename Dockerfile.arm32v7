@@ -3,7 +3,7 @@ FROM arm32v7/alpine:latest
 # For cross building on amd64 host
 COPY qemu-arm-static /usr/bin
 
-RUN apk add --update monit bash curl \
+RUN apk add --update monit bash curl docker-cli bind-tools \
   && mkdir -p /var/lib/monit /etc/monit/monit.d
 COPY docker-entrypoint.sh /
 

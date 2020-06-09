@@ -1,6 +1,7 @@
 FROM alpine:latest
 
-RUN apk add --update monit bash curl
+RUN apk add --update monit bash curl docker-cli bind-tools \
+  && mkdir -p /var/lib/monit /etc/monit/monit.d
 COPY docker-entrypoint.sh /
 
 VOLUME /etc/monit
